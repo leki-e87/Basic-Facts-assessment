@@ -133,23 +133,23 @@ while q_amount > q_answered:
     answer = int_check("Answer here! = ")
     if answer == equation:
         q_correct += 1
-        print("Nice, you got it right!")
+        print("Nice, you got it right! ")
 
     elif answer == "xxx":
         break
 
     else:
-        print("You got it wrong, try again!")
+        print("Ahh, you got it wrong!")
 
     # if the user gets their answer correct, add 1 point to the "answered correctly" variable
     result = answer
 
     if result == equation:
-        feedback = " Nice! This one was correct! 🏆"
+        feedback = f" Nice! This one was correct! - 🏆 "
         q_correct += 1
 
     else:
-        feedback = "Darn, you got this one wrong. 😪"
+        feedback = "Darn, you got this one wrong. - 😪"
 
     # headings for the quiz history
 
