@@ -1,7 +1,5 @@
 import random
 
-history_list = []
-
 
 # function to check whether user chooses yes or no for the instructions
 def yes_no(question):
@@ -70,13 +68,12 @@ def int_check(question):
         try:
             response = int(to_check)
 
-            # checks that the number of questions are limited to 30
-            if response > 30:
-                return error
-            # checks that users can't have less than 1 question
-            # (e.g, they type "0" and end up with 0 questions 🤦‍♂️)
-            elif response < 1:
-                return error
+            # checks that the number of questions are more than / equal to 1 + less than 30
+            if response < 1:
+                print(error)
+
+            elif response > 30:
+                print(error)
             else:
                 return response
 
@@ -100,6 +97,7 @@ mode = "regular"
 # starting quiz with "questions answered" and "answered correctly" as 0
 q_answered = 0
 q_correct = 0
+history_list = []
 
 # asks for number of questions and offers infinite mode
 q_amount = int_check('''
